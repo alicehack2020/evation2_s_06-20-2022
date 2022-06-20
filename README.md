@@ -1,3 +1,13 @@
+1st run
+ json-server --watch db.json --port 8080 
+
+
+http://localhost:8080/products
+http://localhost:8080/cartItems
+
+
+
+
 - fork the repository
 
 - clone the forked repository
@@ -21,10 +31,4 @@ Example : If you need `react-router-dom` library; please install it.
 ---
 
 
-
-1st run
- json-server --watch db.json --port 8080 
-
-
-http://localhost:8080/products
-http://localhost:8080/cartItems
+ 
