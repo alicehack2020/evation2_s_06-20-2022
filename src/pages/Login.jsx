@@ -20,7 +20,7 @@ const Login = () =>
          .then(data => {
           if(data.token)
           {
-            navigate("/Home")
+            navigate("/")
           }
             
          })
