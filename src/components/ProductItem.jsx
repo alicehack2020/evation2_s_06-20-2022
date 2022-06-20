@@ -1,4 +1,14 @@
 import React from "react";
+import styled from "styled-components";
+
+const Wrapper = styled.section`
+  display: flex;
+`;
+
+const Wrapper1 = styled.section`
+  border: 1px solid black;
+`;
+
 
 const ProductItem = ({e}) => 
 {
@@ -7,7 +17,6 @@ const ProductItem = ({e}) =>
   const addHanddle=()=>
   {
     const data=e
-
     fetch('http://localhost:8080/cartItems', {
       method: 'POST', 
       headers: {
@@ -45,16 +54,21 @@ const ProductItem = ({e}) =>
   }
 
   
-  return <div>{
+  return <Wrapper1>{
     <>
       <div key={e.id}>
           <h1>{e.name}</h1>
           <p>{e.description}</p>
           <button onClick={addHanddle}>add</button>
+          <Wrapper>
+            <button>inc</button>
+            <p>count</p>
+            <button>dec</button>
+          </Wrapper>
           <button onClick={removeHanddle} >remove</button>
       </div>
     </>
-  }</div>;
+  }</Wrapper1>;
 };
 
 export default ProductItem;
