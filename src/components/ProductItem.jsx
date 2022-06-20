@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
@@ -12,7 +12,9 @@ const Wrapper1 = styled.section`
 
 const ProductItem = ({e}) => 
 {
-  // id: 9, name: 'Product 9', description: 'Product 9 Description'
+ 
+  const [count,setCount]=useState(0)
+
 
   const addHanddle=()=>
   {
@@ -53,6 +55,16 @@ const ProductItem = ({e}) =>
     });
   }
 
+
+  const inc=()=>
+  {
+    setCount(count+1)
+  }
+
+  const dec=()=>
+  {
+    setCount(count-1)
+  }
   
   return <Wrapper1>{
     <>
@@ -61,9 +73,9 @@ const ProductItem = ({e}) =>
           <p>{e.description}</p>
           <button onClick={addHanddle}>add</button>
           <Wrapper>
-            <button>inc</button>
-            <p>count</p>
-            <button>dec</button>
+            <button onClick={inc}>inc</button>
+            <p>{count}</p>
+            <button onClick={dec}>dec</button>
           </Wrapper>
           <button onClick={removeHanddle} >remove</button>
       </div>
